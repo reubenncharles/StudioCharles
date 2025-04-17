@@ -3,16 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio Charles | Web Development Agency</title>
+    <title>STUDIOCHARLES</title>
     <style>
-        :root {
-            --primary: #0f0f0f;
-            --secondary: #f5f5f5;
-            --accent: #ff3e00;
-            --gray-light: #e0e0e0;
-            --gray: #888888;
-            --transition: all 0.3s ease;
-        }
+
+.referral-banner {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 0.35rem; /* Reduced from 0.5rem */
+        font-size: 0.9rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1001; /* Higher than header */
+    }
+
+    .referral-banner-content {
+        display: inline-block;
+        animation: scroll 20s linear infinite;
+    }
+
+    .referral-banner strong {
+        font-weight: 600;
+        color: var(--accent);
+    }
+    :root {
+        --primary: #0f0f0f;
+        --secondary: #f5f5f5;
+        --accent: #ff0000; /* Changed from #ff3e00 to #ff0000 */
+        --gray-light: #e0e0e0;
+        --gray: #888888;
+        --transition: all 0.3s ease;
+    }
+    
+    /* Add margin-top to header to account for banner */
+    header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 100;
+        margin-top: 0;
+        background-color: rgba(245, 245, 245, 0.9);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth easing transition */
+        padding: 2rem 0;
+    }
+
         
         * {
             margin: 0;
@@ -26,6 +63,8 @@
             color: var(--primary);
             line-height: 1.6;
             overflow-x: hidden;
+            margin: 0;
+            padding-top: 86px;
         }
         
         h1, h2, h3, h4, h5 {
@@ -79,16 +118,20 @@
             z-index: 100;
             background-color: rgba(245, 245, 245, 0.9);
             backdrop-filter: blur(10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth easing transition */
         }
         
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
+            
+            margin-top: 36px; /* Height of the banner */
+    }
+        
         
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increased from 1.5rem */
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -136,6 +179,7 @@
         .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: column; /* Changed to column */
             align-items: center;
             position: relative;
             padding: 8rem 0 4rem;
@@ -143,6 +187,7 @@
         
         .hero-content {
             max-width: 800px;
+            margin-bottom: 4rem; /* Add space between content and scroll indicator */
         }
         
         .hero-text {
@@ -178,14 +223,13 @@
         }
         
         .scroll-indicator {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
+            position: relative; /* Changed from absolute */
+            margin-top: auto; /* Push to bottom of flex container */
             display: flex;
             flex-direction: column;
             align-items: center;
             opacity: 0.7;
+            padding-bottom: 2rem; /* Add padding at bottom */
         }
         
         .scroll-indicator span {
@@ -416,7 +460,7 @@
         
         .testimonial-text::before,
         .testimonial-text::after {
-            content: """;
+            content: "";
             font-size: 3rem;
             color: var(--accent);
             position: absolute;
@@ -429,7 +473,7 @@
         }
         
         .testimonial-text::after {
-            content: """;
+            content: "";
             bottom: -3rem;
             right: -0.5rem;
         }
@@ -621,10 +665,30 @@
                 gap: 1rem;
             }
         }
+
+        /* Add responsive adjustments */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0 2rem;
+            }
+            
+            .hero-content {
+                margin-bottom: 3rem;
+            }
+            
+            .scroll-indicator {
+                margin-top: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <div class="referral-banner">
+            <div class="referral-banner-content">
+                 Easter deal: <strong>30% cashback reward</strong> when you refer a friend who becomes a client!
+            </div>
+        </div>
         <div class="container header-container">
             <a href="#" class="logo">STUDIO <span>CHARLES</span></a>
             <button class="mobile-toggle">≡</button>
@@ -648,7 +712,7 @@
                 <a href="#services" class="hero-cta outline">Explore services</a>
             </div>
         </div>
-        <div class="scroll-indicator">
+        <div style="margin-top:10px;" class="scroll-indicator">
             <span>Scroll</span>
             <div class="scroll-line"></div>
         </div>
@@ -699,12 +763,12 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-image">
-                    <img src="/api/placeholder/600/450" alt="Studio Charles team at work">
+                    <img src="/api/placeholder/600/450" alt="STUDIOCHARLES team at work">
                     <div class="image-overlay"></div>
                 </div>
                 <div class="about-text">
-                    <h2>About <span class="accent">Studio Charles</span></h2>
-                    <p>Founded by Reuben Charles, Studio Charles is a boutique web development agency dedicated to creating exceptional digital experiences that drive business growth.</p>
+                    <h2>About <span class="accent"><strong>STUDIO</strong><span class="lighter">CHARLES</span></span></h2>
+                    <p>Founded by Reuben Charles, <strong>STUDIO</strong><span class="lighter">CHARLES</span> is a boutique web development agency dedicated to creating exceptional digital experiences that drive business growth.</p>
                     <p>We combine technical expertise with creative thinking to deliver websites that not only look stunning but also perform flawlessly. Our approach is collaborative, transparent, and focused on achieving measurable results for our clients.</p>
                     <p>With a passion for clean design, innovative technology, and effective communication, we transform complex ideas into intuitive digital solutions that connect with your audience and elevate your brand.</p>
                 </div>
@@ -771,11 +835,11 @@
         <div class="container">
             <div class="section-intro">
                 <h2>Client <span class="accent">Testimonials</span></h2>
-                <p>Hear what our clients have to say about their experience working with Studio Charles.</p>
+                <p>Hear what our clients have to say about their experience working with <strong>STUDIO</strong><span class="lighter">CHARLES</span>.</p>
             </div>
             <div class="testimonials-slider">
                 <div class="testimonial">
-                    <p class="testimonial-text">Studio Charles transformed our outdated website into a modern, user-friendly platform that perfectly represents our brand. The increase in leads and conversions has been remarkable.</p>
+                    <p class="testimonial-text"><strong>STUDIO</strong><span class="lighter">CHARLES</span> transformed our outdated website into a modern, user-friendly platform that perfectly represents our brand. The increase in leads and conversions has been remarkable.</p>
                     <div class="testimonial-author">Sarah Johnson</div>
                     <div class="testimonial-role">Marketing Director, Elevation Fitness</div>
                 </div>
@@ -802,14 +866,14 @@
                         <div class="contact-icon">☏</div>
                         <div>
                             <h3>Phone</h3>
-                            <p>+1 (555) 123-4567</p>
+                            <p>+61 421 677 855</P>
                         </div>
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">⌖</div>
                         <div>
                             <h3>Location</h3>
-                            <p>123 Creative Avenue, Suite 101<br>San Francisco, CA 94103</p>
+                            <p>112 Castlereigh st<br>Sydney NSW, 2000</p>
                         </div>
                     </div>
                 </div>
@@ -839,7 +903,7 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">STUDIO <span>CHARLES</span></div>
+                <div class="footer-logo"><strong>STUDIO</strong><span class="lighter">CHARLES</span></div>
                 <div class="footer-links">
                     <a href="#services">Services</a>
                     <a href="#about">About</a>
@@ -854,7 +918,7 @@
                 </div>
             </div>
             <div class="copyright">
-                © 2025 Studio Charles. All rights reserved.
+                © 2025 <strong>STUDIO</strong><span class="lighter">CHARLES</span>. All rights reserved.
             </div>
         </div>
     </footer>
@@ -889,13 +953,15 @@
         const header = document.querySelector('header');
         
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.style.padding = '1rem 0';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.padding = '2rem 0';
-                header.style.boxShadow = 'none';
-            }
+            requestAnimationFrame(() => {
+                if (window.scrollY > 100) {
+                    header.style.padding = '1rem 0';
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                } else {
+                    header.style.padding = '2rem 0';
+                    header.style.boxShadow = 'none';
+                }
+            });
         });
     </script>
 </body>
