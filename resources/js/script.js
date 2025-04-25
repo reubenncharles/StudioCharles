@@ -1,19 +1,17 @@
-document.addEventListener('DOMContentLoaded', function() {
+/* ==========================================================================
+   Studio Charles - Main JavaScript
+   ========================================================================== */
+
+   document.addEventListener('DOMContentLoaded', function() {
     'use strict';
     
     // Initialize site
     initLoader();
     initCursorFollower();
     initNavigation();
-    initHeroCanvas();
-    initHeroWordRotation();
     initScrollAnimations();
-    initFilterTabs();
-    initCounterAnimation();
     initTestimonialSlider();
     initContactForm();
-    initPortfolioDemos();
-    initFixedCTA();
     
     /* Page Loader
        ========================================================================== */
@@ -22,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (!loader) return;
         
-        // Let animations complete
+        // Let the typewriter effect complete first (about 2.5s for typing animation)
         setTimeout(() => {
             // Add hidden class
             loader.classList.add('hidden');
@@ -31,21 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
             // Also add a backup timeout just in case
             setTimeout(() => {
                 loader.style.display = 'none';
-            }, 600);
-        }, 2500);
+            }, 1000);
+        }, 3000); // Wait for typewriter to finish + a small pause
     }
     
     /* Cursor Follower
        ========================================================================== */
     function initCursorFollower() {
         const cursor = document.querySelector('.cursor-follower');
-        const cursorDot = document.querySelector('.cursor-dot');
         
-        if (!cursor || !cursorDot || window.matchMedia('(max-width: 768px)').matches) return;
+        if (!cursor || window.matchMedia('(max-width: 768px)').matches) return;
         
         let mouseX = 0, mouseY = 0;
         let cursorX = 0, cursorY = 0;
-        let dotX = 0, dotY = 0;
         
         document.body.classList.add('cursor-active');
         
@@ -83,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Cursor animation
         function animate() {
-            // Main cursor follows with delay
             let distX = mouseX - cursorX;
             let distY = mouseY - cursorY;
             
@@ -92,13 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             cursor.style.left = cursorX + 'px';
             cursor.style.top = cursorY + 'px';
-            
-            // Dot follows cursor more closely
-            dotX = mouseX;
-            dotY = mouseY;
-            
-            cursorDot.style.left = dotX + 'px';
-            cursorDot.style.top = dotY + 'px';
             
             requestAnimationFrame(animate);
         }
@@ -172,131 +160,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    /* Hero Canvas Animation
-       ========================================================================== */
-    function initHeroCanvas() {
-        const canvas = document.getElementById('hero-canvas');
-        
-        if (!canvas) return;
-        
-        const ctx = canvas.getContext('2d');
-        const particles = [];
-        const particleCount = 100;
-        
-        // Resize canvas to full window size
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-        
-        // Particle class
-        class Particle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 3 + 1;
-                this.speedX = Math.random() * 0.5 - 0.25;
-                this.speedY = Math.random() * 0.5 - 0.25;
-                this.color = `rgba(255, 0, 0, ${Math.random() * 0.05})`;
-            }
-            
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                
-                // Bounce off edges
-                if (this.x < 0 || this.x > canvas.width) {
-                    this.speedX = -this.speedX;
-                }
-                
-                if (this.y < 0 || this.y > canvas.height) {
-                    this.speedY = -this.speedY;
-                }
-            }
-            
-            draw() {
-                ctx.fillStyle = this.color;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        }
-        
-        // Create particles
-        function initParticles() {
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
-        }
-        
-        // Draw connecting lines between particles
-        function drawLines() {
-            for (let i = 0; i < particles.length; i++) {
-                for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 150) {
-                        ctx.strokeStyle = `rgba(255, 0, 0, ${0.02 * (1 - distance / 150)})`;
-                        ctx.lineWidth = 0.5;
-                        ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
-                        ctx.stroke();
-                    }
-                }
-            }
-        }
-        
-        // Animation loop
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.update();
-                particle.draw();
-            });
-            
-            drawLines();
-            
-            requestAnimationFrame(animate);
-        }
-        
-        initParticles();
-        animate();
-    }
-    
-    /* Hero Word Rotation
-       ========================================================================== */
-    function initHeroWordRotation() {
-        const rotateItems = document.querySelectorAll('.word-rotation .rotate-item');
-        
-        if (!rotateItems.length) return;
-        
-        let currentIndex = 0;
-        
-        function rotateWords() {
-            // Hide current word
-            rotateItems[currentIndex].classList.remove('active');
-            
-            // Update index
-            currentIndex = (currentIndex + 1) % rotateItems.length;
-            
-            // Show next word
-            rotateItems[currentIndex].classList.add('active');
-        }
-        
-        // Initial state
-        rotateItems[0].classList.add('active');
-        
-        // Rotate words every 3 seconds
-        setInterval(rotateWords, 3000);
-    }
-    
     /* Scroll Animations
        ========================================================================== */
     function initScrollAnimations() {
@@ -319,8 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -10% 0px'
+            threshold: 0.15
         });
         
         animatedElements.forEach(el => {
@@ -331,102 +193,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             window.dispatchEvent(new Event('scroll'));
         }, 500);
-    }
-    
-    /* Filter Tabs for Projects
-       ========================================================================== */
-    function initFilterTabs() {
-        const filterTabs = document.querySelectorAll('.filter-tab');
-        const projectItems = document.querySelectorAll('.project-item');
-        
-        if (!filterTabs.length || !projectItems.length) return;
-        
-        // Filter function
-        function filterProjects(category) {
-            projectItems.forEach(item => {
-                const itemCategory = item.getAttribute('data-category');
-                
-                if (category === 'all' || itemCategory === category) {
-                    item.style.display = '';
-                    setTimeout(() => {
-                        item.style.opacity = '1';
-                        item.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    item.style.opacity = '0';
-                    item.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        item.style.display = 'none';
-                    }, 300);
-                }
-            });
-        }
-        
-        // Event listeners for tabs
-        filterTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Active class
-                filterTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-                
-                // Filter projects
-                const category = tab.getAttribute('data-filter');
-                filterProjects(category);
-            });
-        });
-    }
-    
-    /* Counter Animation for Stats Section
-       ========================================================================== */
-    function initCounterAnimation() {
-        const statItems = document.querySelectorAll('.stat-number');
-        
-        if (!statItems.length) return;
-        
-        let counted = false;
-        
-        function animateNumbers() {
-            if (counted) return;
-            
-            statItems.forEach(item => {
-                const target = parseInt(item.getAttribute('data-count'), 10);
-                const duration = 2000; // ms
-                const increment = target / (duration / 16); // 60fps
-                
-                let current = 0;
-                const counter = setInterval(() => {
-                    current += increment;
-                    
-                    // Update text
-                    item.textContent = Math.round(current);
-                    
-                    // Check if target reached
-                    if (current >= target) {
-                        item.textContent = target;
-                        clearInterval(counter);
-                    }
-                }, 16);
-            });
-            
-            counted = true;
-        }
-        
-        // Trigger counter when stats section is in view
-        const statsSection = document.querySelector('.stats-section');
-        
-        if (statsSection) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        animateNumbers();
-                    }
-                });
-            }, {
-                threshold: 0.5
-            });
-            
-            observer.observe(statsSection);
-        }
     }
     
     /* Testimonial Slider
@@ -561,147 +327,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 formMessage.textContent = '';
                 formMessage.classList.remove('error', 'success');
             });
-        });
-    }
-    
-    /* Portfolio Demos
-       ========================================================================== */
-    function initPortfolioDemos() {
-        const modal = document.querySelector('.portfolio-modal');
-        const modalTitle = document.querySelector('.modal-title');
-        const demoFrame = document.querySelector('.demo-frame');
-        const demoVisitBtn = document.querySelector('.demo-visit-btn');
-        const modalClose = document.querySelector('.modal-close');
-        const demoCloseBtn = document.querySelector('.demo-close-btn');
-        const deviceBtns = document.querySelectorAll('.demo-device-btn');
-        const frameContainer = document.querySelector('.demo-frame-container');
-        
-        // Make sure we have all necessary elements
-        if (!modal || !demoFrame || !modalClose || !demoCloseBtn) return;
-        
-        // Get all project items with demo URLs
-        const demoTriggers = document.querySelectorAll('.project-link.demo-trigger, .project-view-btn');
-        
-        // Add click event to each demo trigger
-        demoTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // Get project data
-                const projectItem = this.closest('.project-item') || this;
-                const demoUrl = projectItem.getAttribute('data-demo-url');
-                const liveUrl = projectItem.getAttribute('data-live-url') || demoUrl;
-                let projectTitle = 'Project Demo';
-                
-                // Try to get title from different elements
-                if (projectItem.querySelector('.project-title')) {
-                    projectTitle = projectItem.querySelector('.project-title').textContent;
-                } else if (document.querySelector('.featured-project-header .section-title')) {
-                    projectTitle = document.querySelector('.featured-project-header .section-title').textContent;
-                }
-                
-                // Set demo frame source
-                demoFrame.src = demoUrl;
-                
-                // Set modal title
-                modalTitle.textContent = projectTitle;
-                
-                // Set visit button URL
-                demoVisitBtn.href = liveUrl;
-                
-                // Open modal
-                modal.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-        });
-        
-        // Device buttons
-        deviceBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Remove active class from all buttons
-                deviceBtns.forEach(b => b.classList.remove('active'));
-                
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                // Get device type
-                const device = this.getAttribute('data-device');
-                
-                // Update frame container class
-                frameContainer.className = 'demo-frame-container ' + device;
-            });
-        });
-        
-        // Close modal functions
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-            
-            // Clear iframe src after a delay to stop any audio/video
-            setTimeout(() => {
-                demoFrame.src = '';
-            }, 300);
-        }
-        
-        // Close modal event listeners
-        modalClose.addEventListener('click', closeModal);
-        demoCloseBtn.addEventListener('click', closeModal);
-        
-        // Close modal on escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && modal.classList.contains('active')) {
-                closeModal();
-            }
-        });
-        
-        // Close modal when clicking outside
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-    }
-    
-    /* Fixed CTA
-       ========================================================================== */
-    function initFixedCTA() {
-        const fixedCTA = document.querySelector('.fixed-cta');
-        const contactSection = document.getElementById('contact');
-        
-        if (!fixedCTA || !contactSection) return;
-        
-        // Show CTA after page loads
-        setTimeout(() => {
-            fixedCTA.classList.add('visible');
-        }, 2500); // After loader animation
-        
-        // Hide CTA when contact section is in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    document.body.classList.add('contact-in-view');
-                } else {
-                    document.body.classList.remove('contact-in-view');
-                }
-            });
-        }, {
-            threshold: 0.3
-        });
-        
-        observer.observe(contactSection);
-        
-        // Smooth scroll when clicking CTA
-        fixedCTA.querySelector('a').addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
         });
     }
     

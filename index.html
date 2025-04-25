@@ -3,322 +3,545 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>STUDIO CHARLES | Web Development Agency</title>
+    <title>STUDIO CHARLES | Digital Experience Agency</title>
     <link rel="stylesheet" href="resources/css/styles.css">
-    <!-- Font preload -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Back to top button -->
-    <button id="back-to-top" aria-label="Back to top">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-    </button>
-
-    <header class="header">
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <span class="logo-bold">STUDIO</span><span class="logo-light">CHARLES</span>
-            </a>
-            <button class="mobile-toggle" aria-label="Toggle menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <nav class="main-nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
+    <!-- Cursor follower -->
+    <div class="cursor-follower"></div>
+    
+    <!-- Page loader -->
+    <div class="page-loader">
+        <div class="loader-content">
+            <div class="typewriter">
+                <h1 class="typewriter-text">STUDIOCHARLES</h1>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-bar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main navigation -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo-link">
+                    <div class="logo">STUDIO<span>CHARLES</span></div>
+                </a>
+                
+                <button class="menu-toggle" aria-label="Toggle menu">
+                    <span class="menu-toggle-line"></span>
+                    <span class="menu-toggle-line"></span>
+                </button>
+                
+                <nav class="main-nav">
+                    <div class="nav-bg"></div>
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="#work" class="nav-link">Work</a></li>
+                        <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="nav-footer">
+                        <div class="nav-contact">
+                            <p>Get in touch</p>
+                            <a href="mailto:hello@studiocharles.com" class="nav-contact-link">hello@studiocharles.com</a>
+                            <a href="tel:+61421677855" class="nav-contact-link">+61 421 677 855</a>
+                        </div>
+                        <div class="nav-social">
+                            <a href="#" class="social-link" aria-label="Instagram">IG</a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">LN</a>
+                            <a href="#" class="social-link" aria-label="Twitter">TW</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         </div>
     </header>
-
+    
+    <!-- Main content -->
     <main>
-        <section class="hero" id="hero">
+        <!-- Hero section -->
+        <section class="hero">
             <div class="container">
-                <div class="hero-content" data-animation="fade-up">
-                    <h1 class="hero-title">Digital experiences that <span class="accent">make a difference</span>.</h1>
-                    <p class="hero-text">We craft beautiful, functional, and user-focused websites and digital solutions that help businesses thrive in the digital landscape.</p>
-                    <div class="hero-cta-container">
-                        <a href="#contact" class="btn btn-primary">Start a project</a>
-                        <a href="#services" class="btn btn-outline">Explore services</a>
+                <div class="hero-content">
+                    <h1 class="hero-title split-text">
+                        <span class="line">
+                            <span class="word">Digital</span>
+                            <span class="word">experiences</span>
+                        </span>
+                        <span class="line">
+                            <span class="word">that</span>
+                            <span class="word">make</span>
+                            <span class="word">a</span>
+                        </span>
+                        <span class="line">
+                            <span class="word accent">difference.</span>
+                        </span>
+                    </h1>
+                    <div class="hero-text">
+                        <p data-animation="fade-up" data-delay="0.4">We craft beautiful, functional, and user-focused websites and digital solutions that help businesses thrive in the digital landscape.</p>
+                    </div>
+                    <div class="hero-cta" data-animation="fade-up" data-delay="0.6">
+                        <a href="#work" class="btn btn-primary">View our work</a>
+                        <a href="#contact" class="btn btn-outline">Get in touch</a>
                     </div>
                 </div>
-            </div>
-            <div class="scroll-indicator">
-                <span class="scroll-text">Scroll</span>
-                <div class="scroll-line">
-                    <div class="scroll-line-inner"></div>
+                
+                <div class="hero-scroll">
+                    <div class="scroll-text">Scroll</div>
+                    <div class="scroll-indicator"></div>
+                </div>
+                
+                <div class="hero-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
                 </div>
             </div>
         </section>
-
-        <section id="services" class="services section-dark">
+        
+        <!-- Featured work section -->
+        <section id="work" class="work-section section-dark">
             <div class="container">
-                <div class="section-header" data-animation="fade-up">
-                    <h2 class="section-title">Our <span class="accent">Services</span></h2>
-                    <p class="section-description">We provide comprehensive web development solutions tailored to meet your unique business needs and objectives.</p>
+                <div class="section-header">
+                    <div class="section-label" data-animation="fade-up">Our work</div>
+                    <h2 class="section-title" data-animation="fade-up" data-delay="0.1">Selected <span class="accent">projects</span></h2>
+                    <p class="section-description" data-animation="fade-up" data-delay="0.2">Explore our portfolio of successful digital experiences that have helped our clients achieve their business goals.</p>
                 </div>
+                
+                <div class="projects-grid">
+                    <article class="project-item" data-animation="fade-up" data-delay="0.3">
+                        <a href="#" class="project-link">
+                            <div class="project-image-wrapper">
+                                <img src="/api/placeholder/800/500" alt="Artisan Bakery Website" class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <div class="project-meta">
+                                            <span class="project-category">E-commerce</span>
+                                            <span class="project-year">2024</span>
+                                        </div>
+                                        <h3 class="project-title">Artisan Bakery</h3>
+                                        <p class="project-description">A responsive e-commerce site with online ordering capabilities</p>
+                                        <div class="project-link-text">View Project <span class="arrow">→</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-item" data-animation="fade-up" data-delay="0.4">
+                        <a href="#" class="project-link">
+                            <div class="project-image-wrapper">
+                                <img src="/api/placeholder/800/500" alt="Financial Advisor Platform" class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <div class="project-meta">
+                                            <span class="project-category">Web Application</span>
+                                            <span class="project-year">2024</span>
+                                        </div>
+                                        <h3 class="project-title">Financial Advisor Platform</h3>
+                                        <p class="project-description">A sophisticated client management system with document sharing</p>
+                                        <div class="project-link-text">View Project <span class="arrow">→</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-item" data-animation="fade-up" data-delay="0.5">
+                        <a href="#" class="project-link">
+                            <div class="project-image-wrapper">
+                                <img src="/api/placeholder/800/500" alt="Fitness Studio Website" class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <div class="project-meta">
+                                            <span class="project-category">Web Design</span>
+                                            <span class="project-year">2023</span>
+                                        </div>
+                                        <h3 class="project-title">Fitness Studio</h3>
+                                        <p class="project-description">A dynamic website with class scheduling and member portal</p>
+                                        <div class="project-link-text">View Project <span class="arrow">→</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <article class="project-item" data-animation="fade-up" data-delay="0.6">
+                        <a href="#" class="project-link">
+                            <div class="project-image-wrapper">
+                                <img src="/api/placeholder/800/500" alt="Architecture Portfolio" class="project-image">
+                                <div class="project-overlay">
+                                    <div class="project-overlay-content">
+                                        <div class="project-meta">
+                                            <span class="project-category">Portfolio Design</span>
+                                            <span class="project-year">2023</span>
+                                        </div>
+                                        <h3 class="project-title">Architecture Portfolio</h3>
+                                        <p class="project-description">A minimalist portfolio website with immersive galleries</p>
+                                        <div class="project-link-text">View Project <span class="arrow">→</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+                
+                <div class="section-cta" data-animation="fade-up">
+                    <a href="#" class="text-link">View all projects <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services section -->
+        <section id="services" class="services-section section-light">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-label" data-animation="fade-up">Our services</div>
+                    <h2 class="section-title" data-animation="fade-up" data-delay="0.1">What we <span class="accent">offer</span></h2>
+                    <p class="section-description" data-animation="fade-up" data-delay="0.2">We provide comprehensive web development solutions tailored to meet your unique business needs and objectives.</p>
+                </div>
+                
                 <div class="services-grid">
-                    <div class="service-card" data-animation="fade-up" data-delay="100">
-                        <div class="service-icon">⟁</div>
+                    <div class="service-card" data-animation="fade-up" data-delay="0.3">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="8" width="32" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 20L32 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M16 28L32 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M22 12L22 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h3 class="service-title">Web Design</h3>
                         <p class="service-description">Beautiful, modern, and user-focused designs that create memorable digital experiences for your audience.</p>
+                        <div class="service-link">
+                            <a href="#" class="text-link">Learn more <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-animation="fade-up" data-delay="200">
-                        <div class="service-icon">⦿</div>
+                    
+                    <div class="service-card" data-animation="fade-up" data-delay="0.4">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 12L40 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M14 8L14 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M20 8L20 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <rect x="8" y="8" width="32" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 24L20 28L24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M32 24L28 28L24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
                         <h3 class="service-title">Web Development</h3>
                         <p class="service-description">Custom-built websites with clean code, optimized performance, and seamless functionality across all devices.</p>
+                        <div class="service-link">
+                            <a href="#" class="text-link">Learn more <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-animation="fade-up" data-delay="300">
-                        <div class="service-icon">⧉</div>
+                    
+                    <div class="service-card" data-animation="fade-up" data-delay="0.5">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M34 16L38 20L34 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 32L10 28L14 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M38 20H26.5C21.8056 20 18 23.8056 18 28.5V28.5C18 33.1944 21.8056 37 26.5 37H30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M10 28H21.5C26.1944 28 30 24.1944 30 19.5V19.5C30 14.8056 26.1944 11 21.5 11H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h3 class="service-title">E-Commerce Solutions</h3>
                         <p class="service-description">Powerful online stores that drive sales, manage inventory, and provide exceptional shopping experiences.</p>
+                        <div class="service-link">
+                            <a href="#" class="text-link">Learn more <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-animation="fade-up" data-delay="100">
-                        <div class="service-icon">⌘</div>
+                    
+                    <div class="service-card" data-animation="fade-up" data-delay="0.6">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 13L30 8L30 40L18 35L8 38L8 10L18 13Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M18 13L18 35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M8 10L8 38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="37" cy="24" r="5" stroke="currentColor" stroke-width="2"/>
+                                <path d="M40 27L44 31" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h3 class="service-title">CMS Integration</h3>
                         <p class="service-description">User-friendly content management systems that give you full control over your website's content.</p>
+                        <div class="service-link">
+                            <a href="#" class="text-link">Learn more <span class="arrow">→</span></a>
+                        </div>
                     </div>
-                    <div class="service-card" data-animation="fade-up" data-delay="200">
-                        <div class="service-icon">⟰</div>
-                        <h3 class="service-title">SEO Optimization</h3>
-                        <p class="service-description">Strategic optimization to improve your visibility in search engines and drive organic traffic to your site.</p>
-                    </div>
-                    <div class="service-card" data-animation="fade-up" data-delay="300">
-                        <div class="service-icon">⥁</div>
+                    
+                    <div class="service-card" data-animation="fade-up" data-delay="0.7">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 14V24L30 30" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M36 8L40 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 8L8 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M36 40L40 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M12 40L8 36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
                         <h3 class="service-title">Maintenance & Support</h3>
                         <p class="service-description">Ongoing maintenance, updates, and technical support to keep your website secure and performing at its best.</p>
+                        <div class="service-link">
+                            <a href="#" class="text-link">Learn more <span class="arrow">→</span></a>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card" data-animation="fade-up" data-delay="0.8">
+                        <div class="service-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 32L24 24L34 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 24L24 16L34 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <rect x="8" y="8" width="32" height="32" rx="2" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-title">SEO Optimization</h3>
+                        <p class="service-description">Strategic optimization to improve your visibility in search engines and drive organic traffic to your site.</p>
+                        <div class="service-link">
+                            <a href="#" class="text-link">Learn more <span class="arrow">→</span></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="about" class="about section-light">
+        
+        <!-- About section -->
+        <section id="about" class="about-section section-dark">
             <div class="container">
                 <div class="about-grid">
-                    <div class="about-image-container" data-animation="fade-right">
+                    <div class="about-content">
+                        <div class="section-label" data-animation="fade-up">About us</div>
+                        <h2 class="section-title" data-animation="fade-up" data-delay="0.1">We create digital <span class="accent">experiences</span></h2>
+                        <div class="about-text" data-animation="fade-up" data-delay="0.2">
+                            <p>Founded by Reuben Charles, Studio Charles is a boutique web development agency dedicated to creating exceptional digital experiences that drive business growth.</p>
+                            <p>We combine technical expertise with creative thinking to deliver websites that not only look stunning but also perform flawlessly. Our approach is collaborative, transparent, and focused on achieving measurable results for our clients.</p>
+                            <p>With a passion for clean design, innovative technology, and effective communication, we transform complex ideas into intuitive digital solutions that connect with your audience and elevate your brand.</p>
+                        </div>
+                        <div class="about-cta" data-animation="fade-up" data-delay="0.3">
+                            <a href="#contact" class="btn btn-primary">Work with us</a>
+                        </div>
+                    </div>
+                    
+                    <div class="about-image-container" data-animation="fade-in" data-delay="0.4">
                         <div class="about-image">
-                            <img src="https://cdn.seeklearning.com.au/media/images/career-guide/module/web-developer-module.jpg" alt="Studio Charles team at work" loading="lazy">
+                            <img src="https://cdn.seeklearning.com.au/media/images/career-guide/module/web-developer-module.jpg" alt="Studio Charles Team" loading="lazy">
                             <div class="image-overlay"></div>
                         </div>
-                    </div>
-                    <div class="about-content" data-animation="fade-left">
-                        <h2 class="section-title">About <span class="accent"><span class="logo-bold">STUDIO</span><span class="logo-light">CHARLES</span></span></h2>
-                        <p><span class="logo-bold">STUDIO</span><span class="logo-light">CHARLES</span> is a boutique web development agency dedicated to creating exceptional digital experiences that drive business growth.</p>
-                        <p>We combine technical expertise with creative thinking to deliver websites that not only look stunning but also perform flawlessly. Our approach is collaborative, transparent, and focused on achieving measurable results for our clients.</p>
-                        <p>With a passion for clean design, innovative technology, and effective communication, we transform complex ideas into intuitive digital solutions that connect with your audience and elevate your brand.</p>
+                        <div class="about-shape"></div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="projects" class="projects section-dark">
+        
+        <!-- Testimonials section -->
+        <section class="testimonials-section section-light">
             <div class="container">
-                <div class="section-header" data-animation="fade-up">
-                    <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
-                    <p class="section-description">Explore some of our recent work and see how we've helped businesses across various industries achieve their digital goals.</p>
+                <div class="section-header">
+                    <div class="section-label" data-animation="fade-up">Testimonials</div>
+                    <h2 class="section-title" data-animation="fade-up" data-delay="0.1">What our <span class="accent">clients say</span></h2>
                 </div>
-                <div class="projects-grid">
-                    <div class="project-card" data-animation="fade-up" data-delay="100">
-                        <div class="project-image-container">
-                            <img src="/api/placeholder/600/340" alt="Artisan Bakery Website" class="project-image" loading="lazy">
-                            <div class="project-overlay">
-                                <h3 class="project-title">Artisan Bakery Website</h3>
-                                <p class="project-description">A responsive e-commerce website for a local artisan bakery with online ordering capabilities.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Web Design</span>
-                                    <span class="project-tag">E-Commerce</span>
-                                </div>
+                
+                <div class="testimonials-slider" data-animation="fade-up" data-delay="0.2">
+                    <div class="testimonial-slide active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">"</div>
+                            <p class="testimonial-text">Studio Charles transformed our outdated website into a modern, user-friendly platform that perfectly represents our brand. The increase in leads and conversions has been remarkable.</p>
+                            <div class="testimonial-author">
+                                <div class="author-name">Sarah Johnson</div>
+                                <div class="author-title">Marketing Director, Elevation Fitness</div>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card" data-animation="fade-up" data-delay="200">
-                        <div class="project-image-container">
-                            <img src="/api/placeholder/600/340" alt="Financial Advisor Platform" class="project-image" loading="lazy">
-                            <div class="project-overlay">
-                                <h3 class="project-title">Financial Advisor Platform</h3>
-                                <p class="project-description">A sophisticated client management system with secure document sharing and appointment scheduling.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Web App</span>
-                                    <span class="project-tag">UI/UX</span>
-                                </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">"</div>
+                            <p class="testimonial-text">Working with Reuben and the team at Studio Charles was an excellent experience from start to finish. They took the time to understand our business goals and delivered a website that exceeded our expectations.</p>
+                            <div class="testimonial-author">
+                                <div class="author-name">Michael Chen</div>
+                                <div class="author-title">CEO, Innovate Solutions</div>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card" data-animation="fade-up" data-delay="300">
-                        <div class="project-image-container">
-                            <img src="/api/placeholder/600/340" alt="Fitness Studio Website" class="project-image" loading="lazy">
-                            <div class="project-overlay">
-                                <h3 class="project-title">Fitness Studio Website</h3>
-                                <p class="project-description">A dynamic website with class scheduling, member portal, and integrated payment processing.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Web Design</span>
-                                    <span class="project-tag">CMS</span>
-                                </div>
+                    
+                    <div class="testimonial-slide">
+                        <div class="testimonial-content">
+                            <div class="testimonial-quote">"</div>
+                            <p class="testimonial-text">Our e-commerce site has never performed better. The attention to detail and technical expertise of Studio Charles is unmatched. Highly recommended for any business looking to elevate their online presence.</p>
+                            <div class="testimonial-author">
+                                <div class="author-name">Emma Rodriguez</div>
+                                <div class="author-title">Owner, Artisan Collective</div>
                             </div>
                         </div>
                     </div>
-                    <div class="project-card" data-animation="fade-up" data-delay="400">
-                        <div class="project-image-container">
-                            <img src="/api/placeholder/600/340" alt="Architecture Portfolio" class="project-image" loading="lazy">
-                            <div class="project-overlay">
-                                <h3 class="project-title">Architecture Portfolio</h3>
-                                <p class="project-description">A minimalist portfolio website showcasing architectural projects with immersive galleries.</p>
-                                <div class="project-tags">
-                                    <span class="project-tag">Web Design</span>
-                                    <span class="project-tag">Portfolio</span>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                
+                <div class="testimonial-controls" data-animation="fade-up" data-delay="0.3">
+                    <button class="testimonial-arrow prev" aria-label="Previous testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    
+                    <div class="testimonial-dots">
+                        <button class="dot active" aria-label="Testimonial 1"></button>
+                        <button class="dot" aria-label="Testimonial 2"></button>
+                        <button class="dot" aria-label="Testimonial 3"></button>
                     </div>
+                    
+                    <button class="testimonial-arrow next" aria-label="Next testimonial">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </section>
-
-        <section id="testimonials" class="testimonials section-light">
+        
+        <!-- Contact section -->
+        <section id="contact" class="contact-section section-dark">
             <div class="container">
-                <div class="section-header" data-animation="fade-up">
-                    <h2 class="section-title">Client <span class="accent">Testimonials</span></h2>
-                    <p class="section-description">Hear what our clients have to say about their experience working with <span class="logo-bold">STUDIO</span><span class="logo-light">CHARLES</span>.</p>
-                </div>
-                <div class="testimonials-container">
-                    <div class="testimonial-card" data-animation="fade-up">
-                        <div class="testimonial-content">
-                            <div class="quote-mark">"</div>
-                            <p class="testimonial-text"><span class="logo-bold">STUDIO</span><span class="logo-light">CHARLES</span> transformed our outdated website into a modern, user-friendly platform that perfectly represents our brand. The increase in leads and conversions has been remarkable.</p>
-                            <div class="testimonial-author">Sarah Johnson</div>
-                            <div class="testimonial-role">Marketing Director, Elevation Fitness</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card" data-animation="fade-up" data-delay="100">
-                        <div class="testimonial-content">
-                            <div class="quote-mark">"</div>
-                            <p class="testimonial-text">Working with Reuben and the team was an excellent experience from start to finish. They took the time to understand our business goals and delivered a website that exceeded our expectations.</p>
-                            <div class="testimonial-author">Michael Chen</div>
-                            <div class="testimonial-role">CEO, Innovate Solutions</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card" data-animation="fade-up" data-delay="200">
-                        <div class="testimonial-content">
-                            <div class="quote-mark">"</div>
-                            <p class="testimonial-text">Our e-commerce site has never performed better. The attention to detail and technical expertise of <span class="logo-bold">STUDIO</span><span class="logo-light">CHARLES</span> is unmatched. Highly recommended!</p>
-                            <div class="testimonial-author">Emma Rodriguez</div>
-                            <div class="testimonial-role">Owner, Artisan Collective</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact section-dark">
-            <div class="container">
-                <div class="section-header" data-animation="fade-up">
-                    <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
-                    <p class="section-description">Ready to start your project? Reach out to discuss how we can help bring your digital vision to life.</p>
-                </div>
                 <div class="contact-grid">
-                    <div class="contact-info" data-animation="fade-right">
-                        <div class="contact-item">
-                            <div class="contact-icon">✉</div>
-                            <div class="contact-text">
-                                <h3 class="contact-title">Email</h3>
-                                <p class="contact-value">hello@studiocharles.com</p>
-                            </div>
+                    <div class="contact-content">
+                        <div class="section-label" data-animation="fade-up">Contact us</div>
+                        <h2 class="section-title" data-animation="fade-up" data-delay="0.1">Let's work <span class="accent">together</span></h2>
+                        <div class="contact-text" data-animation="fade-up" data-delay="0.2">
+                            <p>Ready to start your project? Reach out to discuss how we can help bring your digital vision to life.</p>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">☏</div>
-                            <div class="contact-text">
-                                <h3 class="contact-title">Phone</h3>
-                                <p class="contact-value">+61 421 677 855</p>
+                        
+                        <div class="contact-info" data-animation="fade-up" data-delay="0.3">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M22 12.5V16.5C22 17.3284 21.3284 18 20.5 18H3.5C2.67157 18 2 17.3284 2 16.5V7.5C2 6.67157 2.67157 6 3.5 6H12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M2 7L12 13L22 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Email</div>
+                                    <a href="mailto:hello@studiocharles.com" class="contact-link">hello@studiocharles.com</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">⌖</div>
-                            <div class="contact-text">
-                                <h3 class="contact-title">Location</h3>
-                                <p class="contact-value">112 Castlereigh St<br>Sydney NSW, 2000</p>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.5 11.5C10.5 12.866 11.634 14 13 14C14.366 14 15.5 12.866 15.5 11.5C15.5 10.134 14.366 9 13 9C11.634 9 10.5 10.134 10.5 11.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M19.5 11.5C19.5 16.1906 14.9534 20.0547 13.5774 20.8919C13.2053 21.1146 12.7947 21.1146 12.4226 20.8919C11.0466 20.0547 6.5 16.1906 6.5 11.5C6.5 8.18629 9.18629 5.5 12.5 5.5C15.8137 5.5 18.5 8.18629 18.5 11.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Location</div>
+                                    <address class="contact-address">112 Castlereigh St<br>Sydney NSW, 2000</address>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M8.89286 4.75H6.06818C5.34017 4.75 4.75 5.34017 4.75 6.06818C4.75 13.3483 10.6517 19.25 17.9318 19.25C18.6598 19.25 19.25 18.6598 19.25 17.9318V15.1071L16.1429 13.0357L14.5317 14.6468C14.2519 14.9267 13.8337 15.0137 13.4821 14.8321C12.8858 14.524 11.9181 13.9452 10.9643 13.0357C9.98768 12.1045 9.41548 11.1011 9.12829 10.5065C8.9588 10.1549 9.04583 9.75091 9.32568 9.47106L10.9643 7.82143L8.89286 4.75Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="contact-text">
+                                    <div class="contact-label">Phone</div>
+                                    <a href="tel:+61421677855" class="contact-link">+61 421 677 855</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <form class="contact-form" data-animation="fade-left" id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                    
+                    <form class="contact-form" id="contactForm" data-animation="fade-up" data-delay="0.3">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject" required>
+                            </div>
+                            
+                            <div class="form-group full-width">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project..." rows="5" required></textarea>
+                            </div>
+                            
+                            <div class="form-submit full-width">
+                                <button type="submit" class="btn btn-accent">Send Message</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" placeholder="Your email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-accent form-submit">Send Message</button>
+                        
                         <div class="form-message"></div>
                     </form>
                 </div>
             </div>
+            
+            <div class="contact-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+            </div>
         </section>
     </main>
-
-    <footer class="footer">
+    
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-logo" data-animation="fade-up">
-                    <a href="#" class="logo">
-                        <span class="logo-bold">STUDIO</span><span class="logo-light">CHARLES</span>
+                <div class="footer-logo">
+                    <a href="/" class="logo-link">
+                        <div class="logo">STUDIO<span>CHARLES</span></div>
                     </a>
                 </div>
-                <div class="footer-links" data-animation="fade-up" data-delay="100">
-                    <a href="#services" class="footer-link">Services</a>
-                    <a href="#about" class="footer-link">About</a>
-                    <a href="#projects" class="footer-link">Projects</a>
-                    <a href="#contact" class="footer-link">Contact</a>
+                
+                <div class="footer-nav">
+                    <nav class="footer-menu">
+                        <ul class="footer-menu-list">
+                            <li class="footer-menu-item"><a href="#work" class="footer-menu-link">Work</a></li>
+                            <li class="footer-menu-item"><a href="#services" class="footer-menu-link">Services</a></li>
+                            <li class="footer-menu-item"><a href="#about" class="footer-menu-link">About</a></li>
+                            <li class="footer-menu-item"><a href="#contact" class="footer-menu-link">Contact</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <div class="footer-socials" data-animation="fade-up" data-delay="200">
-                    <a href="#" class="social-icon" aria-label="Facebook">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Instagram">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61991 14.1902 8.22773 13.4229 8.09406 12.5922C7.9604 11.7615 8.09206 10.9099 8.47032 10.1584C8.84858 9.40685 9.45418 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87658 12.63 8C13.4789 8.12588 14.2648 8.52146 14.8717 9.12831C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="Twitter">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95721 14.8821 3.28445C14.0247 3.61169 13.2884 4.19451 12.773 4.9537C12.2575 5.71289 11.9877 6.61239 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-icon" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8V8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
+                
+                <div class="footer-social">
+                    <div class="social-title">Follow us</div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" class="social-link" aria-label="Twitter">Twitter</a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <div class="contact-title">Get in touch</div>
+                    <a href="mailto:hello@studiocharles.com" class="contact-link">hello@studiocharles.com</a>
+                    <a href="tel:+61421677855" class="contact-link">+61 421 677 855</a>
                 </div>
             </div>
-            <div class="copyright" data-animation="fade-up" data-delay="300">
-                &copy; 2025 <span class="logo-bold">STUDIO</span><span class="logo-light">CHARLES</span>. All rights reserved.
+            
+            <div class="footer-bottom">
+                <div class="copyright">© 2025 STUDIOCHARLES. All rights reserved.</div>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                    <a href="#" class="footer-link">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
-
+    
     <script src="resources/js/script.js"></script>
 </body>
 </html>
